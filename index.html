@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Usuario</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
+
+    header{
+      text-align:center;
+      padding:30px 20px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1{
+      font-size:32px;
+      margin-bottom:8px;
+      letter-spacing:1px;
+    }
+
+    header p{
+      font-size:16px;
+      opacity:0.9;
+    }
+
+    main{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:25px;
+    }
+
+    .contenedor{
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(15px);
+      width:100%;
+      max-width:450px;
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.2);
+      box-shadow:0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .perfil{
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    .perfil img{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #fff;
+      box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    label{
+      font-weight:600;
+      margin-bottom:6px;
+      display:block;
+    }
+
+    input{
+      padding:12px;
+      border:none;
+      border-radius:12px;
+      font-size:15px;
+      width:100%;
+      outline:none;
+      background: rgba(255,255,255,0.9);
+      color:#333;
+      transition:0.3s;
+    }
+
+    input:focus{
+      transform:scale(1.02);
+      box-shadow:0 0 10px rgba(255,255,255,0.5);
+    }
+
+    button{
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      color:white;
+      border:none;
+      padding:14px;
+      border-radius:12px;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    button:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    footer{
+      background: rgba(0,0,0,0.3);
+      text-align:center;
+      padding:18px;
+      font-size:14px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Diseño responsivo */
+    @media(max-width:600px){
+      .contenedor{
+        padding:22px;
+      }
+
+      header h1{
+        font-size:26px;
+      }
+
+      .perfil img{
+        width:110px;
+        height:110px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Registro de Usuario</h1>
+    <p>Completa tus datos personales</p>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <section class="contenedor">
+
+      <!-- Imagen de perfil -->
+      <div class="perfil">
+        <img src="imagen2.jpg.jpeg" alt="Imagen de perfil">
+      </div>
+
+      <!-- FORMULARIO -->
+      <form>
+
+        <!-- Nombre -->
+        <div>
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+        </div>
+
+        <!-- Correo -->
+        <div>
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" placeholder="ejemplo@gmail.com" required>
+        </div>
+
+        <!-- Contraseña -->
+        <div>
+          <label for="password">Contraseña</label>
+          <input 
+            type="password" 
+            id="password"
+            placeholder="Mínimo 8 caracteres"
+            minlength="8"
+            required>
+        </div>
+
+        <!-- Fecha -->
+        <div>
+          <label for="fecha">Fecha de nacimiento</label>
+          <input type="date" id="fecha" required>
+        </div>
+
+        <!-- Color favorito -->
+        <div>
+          <label for="color">Color favorito</label>
+          <input type="color" id="color">
+        </div>
+
+        <!-- País con datalist -->
+        <div>
+          <label for="pais">País</label>
+
+          <input list="paises" id="pais" placeholder="Selecciona tu país">
+
+          <datalist id="paises">
+            <option value="México">
+            <option value="Argentina">
+            <option value="Colombia">
+            <option value="Chile">
+            <option value="Perú">
+            <option value="España">
+            <option value="Guatemala">
+          </datalist>
+        </div>
+
+        <!-- Botón -->
+        <button type="submit">Registrarse</button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Registro de Usuario | Diseño Responsivo</p>
+  </footer>
+
+</body>
+</html>
